@@ -38,7 +38,7 @@ int main()
         int src,des;
         cin>>src>>des;
         tmp[src]=addedge(src,des,tmp[src]);
-        tmp[des]=addedge(des,src,tmp[src]);
+        tmp[des]=addedge(des,src,tmp[des]);
     }
     for(int i=0;i<n;i++){
         node *tmp1;
