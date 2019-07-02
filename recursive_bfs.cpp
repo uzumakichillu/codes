@@ -24,14 +24,14 @@ node* addedge(int src,int des,node *head){
     }
     return head;
 }
-void bfs(int s,vector <int>& visited,node *head[]){
+void dfs(int s,vector <int>& visited,node *head[]){
     visited[s]=1;
     cout<<s<<endl;
     node *tmp=head[s];
     while(tmp!=NULL){
         if(visited[tmp->data]==0){
             visited[tmp->data]=1;
-            bfs(tmp->data,visited,head);
+            dfs(tmp->data,visited,head);
         }
         tmp=tmp->next;
     }
@@ -62,8 +62,8 @@ int main()
         }
         cout<<endl;
     }
-    //bfs recursive
+    //dfs recursive
     vector <int>visited(n,0);
-    bfs(0,visited,tmp);
+    dfs(0,visited,tmp);
     return 0;
 }
